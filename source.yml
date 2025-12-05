@@ -1,0 +1,20 @@
+sources:
+  - name: source_bronze
+    database: pysparkdbt 
+    schema: bronze 
+    tables:
+      - name: trips
+
+  - name: source_sliver
+    database: pysparkdbt 
+    schema: sliver
+    tables:
+      - name: customers
+      - name: location
+      - name: driver
+      - name: payment
+      - name: vehicle
+
+
+
+

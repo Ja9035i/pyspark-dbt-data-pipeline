@@ -1,0 +1,47 @@
+snapshots:
+  - name: Dimcustomers
+    relation: source('source_sliver', 'customers')
+    config:
+      schema: gold
+      database: pysparkdbt
+      unique_key: customer_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
+
+  - name: Dimlocations
+    relation: source('source_sliver', 'location')
+    config:
+      schema: gold
+      database: pysparkdbt
+      unique_key: location_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
+  - name: Dimdrivers
+    relation: source('source_sliver', 'driver')
+    config:
+      schema: gold
+      database: pysparkdbt
+      unique_key: driver_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
+  - name: Dimpayments
+    relation: source('source_sliver', 'payment')
+    config:
+      schema: gold
+      database: pysparkdbt
+      unique_key: payment_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
+  - name: Dimvechicles
+    relation: source('source_sliver', 'vehicle')
+    config:
+      schema: gold
+      database: pysparkdbt
+      unique_key: vehicle_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
